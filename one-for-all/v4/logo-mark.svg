@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="ONE FOR ALL"><defs><linearGradient id="oaM" x1="1" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#6BE38F"/><stop offset=".45" stop-color="#22B04B"/><stop offset="1" stop-color="#15843A"/></linearGradient></defs>
+<rect width="512" height="512" rx="112" fill="url(#oaM)"/>
+<g fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round">
+<circle cx="166" cy="257" r="94" stroke-width="56"/>
+<path d="M236 300 L338 138 L436 372" stroke-width="58"/>
+<path d="M270 366 L352 290" stroke-width="22"/>
+</g>
+<path d="M394 248 L373 302 L338 266 Z" fill="#fff" stroke="#fff" stroke-width="8" stroke-linejoin="round"/></svg>
