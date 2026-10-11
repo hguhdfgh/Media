@@ -33,6 +33,9 @@ html,body{margin:0;width:1080px;height:1920px;background:transparent;overflow:hi
 <script src="data.js"></script>
 <script>
 const S=document.getElementById('stage');
+const SQ=location.search.includes('sq');
+if(SQ){document.documentElement.style.cssText=document.body.style.cssText='width:1080px;height:1080px';
+ S.style.cssText='position:absolute;left:0;top:0;width:1080px;height:1920px;transform-origin:0 0;transform:translateX(236px) scale(0.5625)';}
 const cl=(x,a=0,b=1)=>Math.min(b,Math.max(a,x));
 const pr=(t,a,b)=>cl((t-a)/(b-a));
 const oC=x=>1-Math.pow(1-x,3), iC=x=>x*x*x, ioC=x=>x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2;
@@ -61,7 +64,7 @@ trSvg.querySelector('#tPat').setAttribute('fill','url(#pat2)');
 trSvg.querySelector('defs').insertAdjacentHTML('beforeend',`<pattern id="pat2" width="160" height="160" patternUnits="userSpaceOnUse"><g fill="none" stroke="#e2b04a" stroke-opacity=".55" stroke-width="2"><path d="${star8(80,80,58)}"/><path d="${star8(80,80,32,Math.PI/8)}"/><path d="${star8(0,0,29)}"/><path d="${star8(160,0,29)}"/><path d="${star8(0,160,29)}"/><path d="${star8(160,160,29)}"/><path d="M80 22V0M80 138V160M22 80H0M138 80H160"/></g></pattern>`);
 const CUTS=[9.93,14.4,18.17,26.0,29.7,35.27];
 const SWEEPS=[20.57,31.7,33.57];
-const RECT='M0 0H1080V1920H0Z';
+const RECT=location.search.includes('sq')?'M-420 0H1500V1920H-420Z':'M0 0H1080V1920H0Z';
 function renderTr(t){let best=null;for(const c of CUTS){if(t>c-0.34&&t<c+0.4)best=c}
  const g=trSvg.querySelector('#tg');if(best===null){g.style.display='none';return}g.style.display='';
  const Rm=1250;let R,rot;const d=t-best;
@@ -167,7 +170,7 @@ const logo=el(`<img src="logo.png" class="abs" style="left:0;top:0;width:1080px;
 const logoShine=el(`<div class="abs" style="left:0;top:0;width:1080px;height:540px;background:radial-gradient(ellipse at center,rgba(4,16,48,.75),rgba(4,16,48,0) 70%);transform-origin:0 0"></div>`);
 S.insertBefore(logoShine,logo);
 function renderLogo(t){// intro center lower
- const W0=860,x0=110,y0=1150,W1=230,x1=1080-W1-30,y1=40;let w,x,y,o,bgo;
+ const W0=860,x0=110,y0=1150,W1=230,x1=(SQ?1500:1080)-W1-30,y1=40;let w,x,y,o,bgo;
  if(t<1.55){const p=oC(pr(t,0,0.7));w=W0*(0.94+0.06*p);x=540-w/2;y=y0+(1-p)*30;o=p;bgo=p}
  else if(t<2.15){const p=ioC(pr(t,1.55,2.15));w=W0+(W1-W0)*p;x=x0+(x1-x0)*p;y=y0+(y1-y0)*p;o=1;bgo=1-p}
  else if(t<39.2){w=W1;x=x1;y=y1;o=0.92;bgo=0}
@@ -198,6 +201,9 @@ function renderCTA(t){const a=39.4;const vis=t>=a;cta.style.display=vis?'':'none
 
 // order: content below transition? keep text above transition so cards persist
 S.appendChild(trSvg);S.appendChild(sweep);[...KW.map(k=>k.e),cardHead,C1,C2,fl,giftHead,...GIFTS.map(g=>g.e),subs,cta,logoShine,logo].forEach(e=>S.appendChild(e));
+if(SQ){trSvg.style.left='-420px';trSvg.setAttribute('width',1920);trSvg.setAttribute('viewBox','-420 0 1920 1920');
+ trSvg.querySelector('#tFill').ownerSVGElement;sweep.style.left='-1100px';sweep.style.width='3300px';
+ cta.querySelector('.cbg').style.left='-420px';cta.querySelector('.cbg').style.right='-420px';cta.querySelector('.cpat').style.left='-420px';cta.querySelector('.cpat').style.right='-420px';}
 window.render=t=>{renderTr(t);renderSweep(t);renderKW(t);renderCards(t);renderFlight(t);renderGifts(t);renderSubs(t);renderCTA(t);renderLogo(t)};
 window.render(0);
 </script></body></html>
