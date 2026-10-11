@@ -1,0 +1,11 @@
+const {chromium}=require('/opt/node-tools/node_modules/playwright');
+const [,,mode,arg]=process.argv;const fs=require('fs');
+(async()=>{const b=await chromium.launch({executablePath:'/opt/pw-browsers/chromium-1194/chrome-linux/chrome'});
+ const FPS=30,N=Math.round(44.9*FPS);const W=mode==='all'?6:1;
+ const times=mode==='all'?[...Array(N).keys()]:arg.split(',').map(x=>Math.round(+x*FPS));
+ fs.mkdirSync(mode==='all'?'frames':'test',{recursive:true});
+ await Promise.all([...Array(W).keys()].map(async w=>{const p=await b.newPage({viewport:{width:1080,height:1920}});
+  await p.goto('file://'+__dirname+'/overlay.html');await p.evaluate(()=>document.fonts.ready);await p.waitForTimeout(300);
+  for(let i=w;i<times.length;i+=W){const f=times[i];await p.evaluate(t=>render(t),f/FPS);
+   await p.screenshot({path:(mode==='all'?'frames/':'test/')+String(f).padStart(5,'0')+'.png',omitBackground:true});}}));
+ await b.close()})();

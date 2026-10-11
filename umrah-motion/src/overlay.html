@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8">
+<style>
+@font-face{font-family:Ruqaa;src:url(ruqaa.woff2)}
+@font-face{font-family:Naskh;src:url(noto-naskh-arabic-arabic-700-normal.woff2);font-weight:700}
+@font-face{font-family:Naskh;src:url(noto-naskh-arabic-arabic-400-normal.woff2);font-weight:400}
+:root{--gold:#e2b04a;--gold2:#f6d98b;--blue:#0d2f7a;--deep:#071a47;--cream:#fbf3df}
+html,body{margin:0;width:1080px;height:1920px;background:transparent;overflow:hidden}
+#stage{position:absolute;inset:0;font-family:Naskh}
+.abs{position:absolute}
+.kw{position:absolute;left:0;right:0;display:flex;flex-direction:column;align-items:center}
+.band{position:absolute;top:-40px;bottom:-30px;left:50%;transform:translateX(-50%);border-radius:28px;
+ background-color:rgba(7,26,71,.62);background-size:90px 90px}
+.kw .t{position:relative;font-family:Ruqaa;color:var(--gold2);line-height:1.25;padding:0 40px;
+ background:linear-gradient(180deg,#fff2c4 0%,#f1c867 45%,#c8902e 100%);-webkit-background-clip:text;background-clip:text;color:transparent;
+ filter:drop-shadow(0 4px 10px rgba(0,0,0,.55))}
+.kw .s{position:relative;font-weight:700;color:#fff;font-size:46px;text-shadow:0 3px 12px rgba(0,0,0,.7)}
+.orn{position:relative;height:34px;margin:4px 0}
+#subs{position:absolute;left:60px;right:60px;top:1540px;text-align:center;font-weight:700;font-size:54px;line-height:1.5;color:#fff;
+ text-shadow:0 0 3px #000,0 4px 14px rgba(0,0,0,.85)}
+#subs span{transition:none}
+.card{position:absolute;width:450px;height:600px;border-radius:44px;overflow:hidden;
+ background:linear-gradient(160deg,rgba(255,250,236,.93),rgba(245,230,195,.86));box-shadow:0 30px 60px rgba(0,0,0,.45),inset 0 2px 0 rgba(255,255,255,.9);
+ display:flex;flex-direction:column;align-items:center}
+.pill{margin-top:40px;padding:6px 30px;border-radius:40px;background:rgba(255,255,255,.7);font-size:32px;font-weight:700;color:#3a2a10;box-shadow:0 2px 8px rgba(0,0,0,.12)}
+.card .ct{font-family:Ruqaa;font-size:112px;color:#3a240c;line-height:1.2;margin-top:18px}
+.strip{width:100%;height:70px;margin:22px 0;background-color:var(--blue);background-size:70px 70px}
+.card .cs{font-size:40px;font-weight:700;color:#3a2a10;text-align:center;padding:0 30px;line-height:1.4}
+.gift{position:absolute;width:230px;display:flex;flex-direction:column;align-items:center}
+.gift .ic{width:170px;height:170px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fffaf0,#efdcae);box-shadow:0 14px 30px rgba(0,0,0,.4),0 0 0 4px rgba(226,176,74,.85);display:flex;align-items:center;justify-content:center}
+.gift .gl{margin-top:16px;font-weight:700;font-size:38px;color:#fff;text-shadow:0 3px 10px rgba(0,0,0,.8);white-space:nowrap}
+</style></head><body><div id="stage"></div>
+<script src="data.js"></script>
+<script>
+const S=document.getElementById('stage');
+const cl=(x,a=0,b=1)=>Math.min(b,Math.max(a,x));
+const pr=(t,a,b)=>cl((t-a)/(b-a));
+const oC=x=>1-Math.pow(1-x,3), iC=x=>x*x*x, ioC=x=>x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2;
+const oB=x=>{const c=1.4;return 1+(c+1)*Math.pow(x-1,3)+c*Math.pow(x-1,2)};
+const el=(h)=>{const d=document.createElement('div');d.innerHTML=h.trim();const e=d.firstChild;S.appendChild(e);return e};
+
+// ---- Islamic 8-point star geometry & tile
+function star8(cx,cy,R,rot=0){const r=R*0.7654;let p=[];for(let i=0;i<16;i++){const a=rot+i*Math.PI/8-Math.PI/2;const rr=i%2?r:R;p.push((cx+rr*Math.cos(a)).toFixed(1)+','+(cy+rr*Math.sin(a)).toFixed(1))}return 'M'+p.join('L')+'Z'}
+function tile(sz,stroke,bg,w){const c=sz/2,R=sz*0.36;
+ const s=`<svg xmlns='http://www.w3.org/2000/svg' width='${sz}' height='${sz}'>${bg?`<rect width='100%' height='100%' fill='${bg}'/>`:''}<g fill='none' stroke='${stroke}' stroke-width='${w}'>
+ <path d='${star8(c,c,R)}'/><path d='${star8(c,c,R*0.55,Math.PI/8)}'/>
+ <path d='${star8(0,0,R*0.5)}'/><path d='${star8(sz,0,R*0.5)}'/><path d='${star8(0,sz,R*0.5)}'/><path d='${star8(sz,sz,R*0.5)}'/>
+ <path d='M${c} ${c-R}L${c} 0M${c} ${c+R}L${c} ${sz}M${c-R} ${c}L0 ${c}M${c+R} ${c}L${sz} ${c}'/></g></svg>`;
+ return `url("data:image/svg+xml,${encodeURIComponent(s)}")`}
+const TILE_BAND=tile(90,'rgba(226,176,74,.45)',null,1.6);
+const TILE_STRIP=tile(70,'rgba(190,215,255,.75)',null,1.4);
+const ORN=`<svg class="orn" width="420" height="34" viewBox="0 0 420 34"><g fill="none" stroke="#e2b04a" stroke-width="2.4"><path d="M10 17H160M260 17H410"/><path d="${star8(210,17,15)}" fill="rgba(226,176,74,.25)"/><circle cx="180" cy="17" r="4" fill="#e2b04a"/><circle cx="240" cy="17" r="4" fill="#e2b04a"/></g></svg>`;
+
+// ---- transitions (star iris)
+const NS='http://www.w3.org/2000/svg';
+const trSvg=el(`<svg class="abs" width="1080" height="1920" style="left:0;top:0"><defs>
+<pattern id="pat" width="120" height="120" patternUnits="userSpaceOnUse"><rect width="120" height="120" fill="#0b2766"/></pattern>
+<radialGradient id="vg" cx="50%" cy="50%" r="70%"><stop offset="0" stop-color="#1a3f95"/><stop offset="1" stop-color="#061536"/></radialGradient></defs>
+<g id="tg"><path id="tFill" fill="url(#vg)" fill-rule="evenodd"/><path id="tPat" fill-rule="evenodd"/><path id="tEdge" fill="none" stroke="#f0c766" stroke-width="7"/><path id="tEdge2" fill="none" stroke="#f0c766" stroke-opacity=".45" stroke-width="3"/></g></svg>`);
+trSvg.querySelector('#tPat').setAttribute('fill','url(#pat2)');
+trSvg.querySelector('defs').insertAdjacentHTML('beforeend',`<pattern id="pat2" width="160" height="160" patternUnits="userSpaceOnUse"><g fill="none" stroke="#e2b04a" stroke-opacity=".55" stroke-width="2"><path d="${star8(80,80,58)}"/><path d="${star8(80,80,32,Math.PI/8)}"/><path d="${star8(0,0,29)}"/><path d="${star8(160,0,29)}"/><path d="${star8(0,160,29)}"/><path d="${star8(160,160,29)}"/><path d="M80 22V0M80 138V160M22 80H0M138 80H160"/></g></pattern>`);
+const CUTS=[9.93,14.4,18.17,26.0,29.7,35.27];
+const SWEEPS=[20.57,31.7,33.57];
+const RECT='M0 0H1080V1920H0Z';
+function renderTr(t){let best=null;for(const c of CUTS){if(t>c-0.34&&t<c+0.4)best=c}
+ const g=trSvg.querySelector('#tg');if(best===null){g.style.display='none';return}g.style.display='';
+ const Rm=1250;let R,rot;const d=t-best;
+ if(d<0){const p=pr(t,best-0.34,best-0.033);R=Rm*(1-iC(p));rot=p*Math.PI/8}else{const p=pr(t,best,best+0.4);R=Rm*oC(p);rot=Math.PI/8+p*Math.PI/8}
+ R=Math.max(R,0);const cx=540,cy=900;const st=R>1?star8(cx,cy,R,rot):'';
+ g.querySelector('#tFill').setAttribute('d',RECT+st);g.querySelector('#tPat').setAttribute('d',RECT+st);
+ g.querySelector('#tEdge').setAttribute('d',st);g.querySelector('#tEdge2').setAttribute('d',R>1?star8(cx,cy,R*1.07+20,rot):'');}
+const sweep=el(`<div class="abs" style="left:-600px;top:0;width:2280px;height:1920px;background:linear-gradient(110deg,transparent 42%,rgba(255,226,160,.28) 49%,rgba(255,245,220,.42) 50%,rgba(255,226,160,.28) 51%,transparent 58%)"></div>`);
+function renderSweep(t){let v=-1;for(const c of SWEEPS){if(t>c-0.2&&t<c+0.35)v=pr(t,c-0.2,c+0.35)}sweep.style.display=v<0?'none':'';sweep.style.transform=`translateX(${(1-ioC(v))*1700-1700/2*1}px)`;sweep.style.opacity=Math.sin(Math.PI*cl(v))}
+
+// ---- keywords
+const KW=[
+ {a:2.62,b:5.2,y:1120,t:'برنامج عمرة',fs:120,s:'موسم 2026 / 2027'},
+ {a:13.1,b:14.32,y:250,t:'الحلم يولّي حقيقة',fs:104},
+ {a:16.75,b:18.12,y:1180,t:'بلا توقف · بلا تعب',fs:96},
+ {a:18.22,b:19.15,y:1180,t:'الإقامة على حسابك',fs:96},
+ {a:19.2,b:20.5,y:1150,t:'VIP',fs:130,s:'للي يحب الراحة الكاملة',latin:1},
+ {a:20.62,b:22.35,y:300,t:'الاقتصادي',fs:116,s:'بأحسن قيمة'},
+ {a:22.4,b:23.62,y:300,t:'اختار اللي يريحك',fs:104},
+ {a:29.75,b:31.65,y:280,t:'مكة المكرمة',fs:140,orn:1},
+ {a:32.55,b:35.22,y:1170,t:'مرشد ديني معاك',fs:110,s:'من أول خطوة حتى آخر طواف'},
+ {a:35.32,b:38.45,y:1170,t:'ذكرى تبقى معاك',fs:110,s:'طول عمرك',orn:1},
+ {a:38.52,b:39.45,y:1190,t:'ما تخلّيهاش العام الجاي',fs:88},
+];
+for(const k of KW){
+ k.e=el(`<div class="kw" style="top:${k.y}px"><div class="band"></div><div class="t" style="font-size:${k.fs}px;${k.latin?'font-family:Georgia,serif;font-weight:700;letter-spacing:6px':''}">${k.t}</div>${k.orn?ORN:''}${k.s?`<div class="s">${k.s}</div>`:''}</div>`);
+ k.band=k.e.querySelector('.band');k.band.style.backgroundImage=TILE_BAND;
+ k.tt=k.e.querySelector('.t');k.ss=k.e.querySelector('.s');k.oo=k.e.querySelector('.orn');}
+function renderKW(t){for(const k of KW){const vis=t>k.a-0.01&&t<k.b+0.01;k.e.style.display=vis?'':'none';if(!vis)continue;
+ if(!k.w){k.w=Math.max(k.tt.offsetWidth,k.ss?k.ss.offsetWidth:0)+80;k.band.style.width=Math.min(1040,k.w)+'px'}
+ const pin=pr(t,k.a,k.a+0.45),pout=pr(t,k.b-0.3,k.b);
+ // band draws top->bottom in, retracts top->bottom out
+ k.band.style.clipPath=`inset(${ioC(pout)*100}% 0 ${(1-ioC(pr(t,k.a,k.a+0.4)))*100}% 0 round 28px)`;
+ k.band.style.backgroundPosition=`center ${(t-k.a)*30}px`;
+ const pt=pr(t,k.a+0.12,k.a+0.62);
+ k.tt.style.clipPath=`inset(0 0 0 ${(1-oC(pt))*100}%)`; // RTL wipe from right
+ k.tt.style.transform=`translateY(${(1-oC(pt))*24 - oC(pout)*20}px) scale(${1+0.04*(1-oC(pt))})`;
+ k.tt.style.opacity=1-pout;
+ if(k.ss){const ps=pr(t,k.a+0.35,k.a+0.75);k.ss.style.opacity=oC(ps)*(1-pout);k.ss.style.transform=`translateY(${(1-oC(ps))*18}px)`}
+ if(k.oo){const po=pr(t,k.a+0.25,k.a+0.8);k.oo.style.clipPath=`inset(0 ${50*(1-oC(po))}% 0 ${50*(1-oC(po))}%)`;k.oo.style.opacity=1-pout}}}
+
+// ---- subtitles
+const subs=el('<div id="subs"></div>');const HIDE=[[0,2.1],[7.2,10.8],[14.4,16.7],[25.0,29.3],[39.35,99]];
+function renderSubs(t){if(HIDE.some(([a,b])=>t>=a&&t<b)){subs.style.opacity=0;return}
+ const c=SUBS.find(c=>t>=c.s-0.05&&t<c.e);if(!c){subs.style.opacity=0;return}
+ const p=pr(t,c.s-0.05,c.s+0.15);subs.style.opacity=oC(p);subs.style.transform=`translateY(${(1-oC(p))*14}px)`;
+ const key=c.s+'';if(subs.dataset.k!==key){subs.dataset.k=key;subs.innerHTML=c.w.map(w=>`<span>${w[0]}</span>`).join(' ')}
+ [...subs.children].forEach((s,i)=>{const w=c.w[i];s.style.color=t>=w[1]?'#f6d27a':'#fff'})}
+
+// ---- offer cards
+function mkCard(x,title,sub,latin){const e=el(`<div class="card" style="left:${x}px;top:1190px"><div class="pill">عرض العمرة</div><div class="ct" ${latin?'style="font-family:Georgia,serif;font-weight:700;font-size:96px;letter-spacing:4px;margin-top:40px;margin-bottom:12px"':''}>${title}</div><div class="strip"></div><div class="cs">${sub}</div></div>`);e.querySelector('.strip').style.backgroundImage=TILE_STRIP;return e}
+const C1=mkCard(560,'VIP','راحة كاملة<br>من الألف إلى الياء',1),C2=mkCard(70,'اقتصادي','أحسن قيمة<br>بأفضل سعر');
+const cardHead=el(`<div class="kw" style="top:1010px"><div class="t" style="font-size:96px">عرضين للعمرة</div></div>`);
+function renderCards(t){[[C1,8.05],[C2,8.95]].forEach(([c,a])=>{const b=10.75;const vis=t>=7.95&&t<b;c.style.display=vis&&t>=a-0.01?'':'none';
+ const p=pr(t,a,a+0.55),po=pr(t,b-0.35,b);c.style.opacity=oC(pr(t,a,a+0.3))*(1-po);
+ c.style.transform=`translateY(${(1-oB(p))*140+po*60}px) scale(${0.9+0.1*oC(p)}) rotate(${(1-oC(p))*(c===C1?4:-4)}deg)`;
+ c.querySelector('.strip').style.clipPath=`inset(0 0 0 ${(1-ioC(pr(t,a+0.25,a+0.8)))*100}%)`;
+ c.querySelector('.strip').style.backgroundPosition=`${-(t-a)*40}px 0`});
+ const a=7.2,b=10.75,vis=t>=a&&t<b;cardHead.style.display=vis?'':'none';const p=pr(t,a,a+0.5),po=pr(t,b-0.3,b);
+ const tt=cardHead.querySelector('.t');tt.style.clipPath=`inset(0 0 0 ${(1-oC(p))*100}%)`;tt.style.opacity=1-po}
+
+// ---- flight graphic
+const fl=el(`<div class="abs" style="left:0;top:180px;width:1080px;height:420px">
+<svg width="1080" height="420" style="position:absolute;left:0;top:0"><path id="arc" d="M900 300 Q540 40 180 300" fill="none" stroke="#f0c766" stroke-width="5" stroke-dasharray="14 14" stroke-linecap="round"/>
+<circle cx="900" cy="300" r="14" fill="#f0c766"/><circle id="dst" cx="180" cy="300" r="14" fill="#f0c766"/>
+<g id="plane"><path d="M-34 -6 L10 -6 L-6 -34 L6 -34 L30 -6 L48 -6 Q60 0 48 6 L30 6 L6 34 L-6 34 L10 6 L-34 6 L-44 18 L-52 18 L-46 0 L-52 -18 L-44 -18Z" fill="#fff" stroke="#0d2f7a" stroke-width="3"/></g></svg>
+<div class="kw" style="top:-10px"><div class="t" style="font-size:110px">طيران مباشر</div></div>
+<div class="abs fs" style="right:60px;top:330px;font-weight:700;font-size:44px;color:#fff;text-shadow:0 3px 10px #000">الجزائر</div>
+<div class="abs fd" style="left:40px;top:330px;font-weight:700;font-size:44px;color:#fff;text-shadow:0 3px 10px #000">أرض الحرمين</div></div>`);
+const arc=fl.querySelector('#arc'),AL=arc.getTotalLength();
+function renderFlight(t){const a=14.55,b=16.7;const vis=t>=a&&t<b;fl.style.display=vis?'':'none';if(!vis)return;
+ const po=pr(t,b-0.3,b);fl.style.opacity=1-po;const tt=fl.querySelector('.t');tt.style.clipPath=`inset(0 0 0 ${(1-oC(pr(t,a,a+0.5)))*100}%)`;
+ const p=ioC(pr(t,a+0.2,a+1.6));arc.style.strokeDashoffset=0;arc.setAttribute('stroke-dasharray',`14 14`);
+ arc.style.clipPath='';const pt=arc.getPointAtLength(p*AL),pt2=arc.getPointAtLength(Math.min(AL,p*AL+2));
+ const ang=Math.atan2(pt2.y-pt.y,pt2.x-pt.x)*180/Math.PI;
+ fl.querySelector('#plane').setAttribute('transform',`translate(${pt.x},${pt.y}) rotate(${p>=1?180:ang}) scale(.9)`);
+ // reveal arc behind plane via mask using dash trick on a solid overlay: approximate by hiding with gradient
+ arc.setAttribute('stroke-dasharray',`${p*AL} ${AL}`);arc.style.strokeDashoffset=0;
+ fl.querySelector('#dst').style.opacity=p>0.97?1:0.25;
+ fl.querySelector('.fs').style.opacity=oC(pr(t,a+0.1,a+0.4));fl.querySelector('.fd').style.opacity=oC(pr(t,a+1.4,a+1.7))}
+
+// ---- gifts
+const ICONS={
+ bag:`<svg width="96" height="96" viewBox="0 0 96 96" fill="none" stroke="#0d2f7a" stroke-width="5" stroke-linejoin="round"><rect x="14" y="30" width="68" height="52" rx="8"/><path d="M34 30V20a6 6 0 0 1 6-6h16a6 6 0 0 1 6 6v10"/><path d="M14 50H82" stroke="#c8902e"/><rect x="42" y="45" width="12" height="10" rx="2" fill="#c8902e" stroke="#c8902e"/></svg>`,
+ ihram:`<svg width="96" height="96" viewBox="0 0 96 96" fill="none" stroke="#0d2f7a" stroke-width="5" stroke-linejoin="round"><path d="M20 18h56v60H20z"/><path d="M20 18l56 36" stroke="#c8902e"/><path d="M30 78V58M44 78V58M58 78V62M70 78V66"/></svg>`,
+ khimar:`<svg width="96" height="96" viewBox="0 0 96 96" fill="none" stroke="#0d2f7a" stroke-width="5" stroke-linejoin="round"><path d="M48 12c-18 0-28 14-28 32v12c0 10-8 16-12 26h80c-4-10-12-16-12-26V44c0-18-10-32-28-32z"/><ellipse cx="48" cy="46" rx="14" ry="17" stroke="#c8902e"/></svg>`,
+ zamzam:`<svg width="96" height="96" viewBox="0 0 96 96" fill="none" stroke="#0d2f7a" stroke-width="5" stroke-linejoin="round"><path d="M38 10h20v10l8 10v52a6 6 0 0 1-6 6H36a6 6 0 0 1-6-6V30l8-10z"/><path d="M48 46c-6 8-9 12-9 17a9 9 0 0 0 18 0c0-5-3-9-9-17z" fill="#c8902e" stroke="#c8902e"/></svg>`};
+const GIFTS=[['bag','حقيبة خاصة',25.9],['ihram','إحرام للرجال',26.7],['khimar','خمار للنساء',27.6],['zamzam','ماء زمزم',28.5]];
+const giftHead=el(`<div class="kw" style="top:1180px"><div class="band"></div><div class="t" style="font-size:92px">هدية لكل معتمر</div></div>`);
+giftHead.querySelector('.band').style.backgroundImage=TILE_BAND;
+GIFTS.forEach((g,i)=>{g.e=el(`<div class="gift" style="left:${1080-40-(i+1)*250+10}px;top:1420px"><div class="ic">${ICONS[g[0]]}</div><div class="gl">${g[1]}</div></div>`)});
+function renderGifts(t){const a=25.25,b=29.2,vis=t>=a&&t<b;const po=pr(t,b-0.35,b);
+ giftHead.style.display=vis?'':'none';
+ if(vis){if(!giftHead.w){giftHead.w=1;giftHead.querySelector('.band').style.width=giftHead.querySelector('.t').offsetWidth+80+'px'}
+  const bd=giftHead.querySelector('.band');bd.style.clipPath=`inset(${ioC(po)*100}% 0 ${(1-ioC(pr(t,a,a+0.4)))*100}% 0 round 28px)`;bd.style.backgroundPosition=`center ${(t-a)*30}px`;
+  const tt=giftHead.querySelector('.t');tt.style.clipPath=`inset(0 0 0 ${(1-oC(pr(t,a+0.1,a+0.6)))*100}%)`;tt.style.opacity=1-po}
+ GIFTS.forEach(g=>{const s=g[2]-0.15;const v=t>=s&&t<b;g.e.style.display=v?'':'none';if(!v)return;const p=pr(t,s,s+0.5);
+  g.e.style.opacity=oC(pr(t,s,s+0.25))*(1-po);g.e.querySelector('.ic').style.transform=`scale(${oB(p)}) rotate(${(1-oC(p))*-20}deg)`;
+  g.e.querySelector('.gl').style.transform=`translateY(${(1-oC(pr(t,s+0.15,s+0.55)))*20}px)`;g.e.querySelector('.gl').style.opacity=oC(pr(t,s+0.15,s+0.55))})}
+
+// ---- logo intro / watermark
+const logo=el(`<img src="logo.png" class="abs" style="left:0;top:0;width:1080px;transform-origin:0 0">`);
+const logoShine=el(`<div class="abs" style="left:0;top:0;width:1080px;height:540px;background:radial-gradient(ellipse at center,rgba(4,16,48,.75),rgba(4,16,48,0) 70%);transform-origin:0 0"></div>`);
+S.insertBefore(logoShine,logo);
+function renderLogo(t){// intro center lower
+ const W0=860,x0=110,y0=1150,W1=230,x1=1080-W1-30,y1=40;let w,x,y,o,bgo;
+ if(t<1.55){const p=oC(pr(t,0,0.7));w=W0*(0.94+0.06*p);x=540-w/2;y=y0+(1-p)*30;o=p;bgo=p}
+ else if(t<2.15){const p=ioC(pr(t,1.55,2.15));w=W0+(W1-W0)*p;x=x0+(x1-x0)*p;y=y0+(y1-y0)*p;o=1;bgo=1-p}
+ else if(t<39.2){w=W1;x=x1;y=y1;o=0.92;bgo=0}
+ else{const p=pr(t,39.2,39.5);w=W1;x=x1;y=y1;o=0.92*(1-p);bgo=0}
+ logo.style.width=w+'px';logo.style.transform=`translate(${x}px,${y}px)`;logo.style.opacity=o;
+ logo.style.filter=t<2.15?`drop-shadow(0 6px 18px rgba(0,0,0,.5)) brightness(${1+0.35*Math.max(0,Math.sin(pr(t,0.3,1.3)*Math.PI))})`:'drop-shadow(0 3px 8px rgba(0,0,0,.6))';
+ logoShine.style.width=w+'px';logoShine.style.height=w/2+'px';logoShine.style.transform=`translate(${x}px,${y}px)`;logoShine.style.opacity=bgo}
+
+// ---- CTA outro
+const cta=el(`<div class="abs" style="left:0;top:0;width:1080px;height:1920px">
+<div class="cbg abs" style="left:0;right:0;top:880px;height:1040px;background:linear-gradient(180deg,rgba(6,21,58,0),rgba(6,21,58,.8) 28%,rgba(6,21,58,.94))"></div>
+<div class="cpat abs" style="left:0;right:0;top:1060px;height:860px;opacity:.35"></div>
+<img class="clogo abs" src="logo.png" style="left:150px;top:1010px;width:780px">
+<div class="kw ct1" style="top:1420px"><div class="t" style="font-size:104px">اتصل بنا الآن</div></div>
+<div class="abs cph" style="left:0;right:0;top:1580px;text-align:center;direction:ltr;font-weight:700;font-size:58px;color:#fff;line-height:1.45;text-shadow:0 3px 10px #000">
+<div class="p1"><span style="color:#f0c766">☎</span> +213 540 563 339</div><div class="p2"><span style="color:#f0c766">☎</span> +213 795 718 786</div></div>
+<div class="abs cad" style="left:0;right:0;top:1780px;text-align:center;font-weight:700;font-size:44px;color:#f6d98b;text-shadow:0 3px 10px #000">📍 الدرارية، الجزائر العاصمة</div></div>`);
+cta.querySelector('.cpat').style.backgroundImage=TILE_BAND;cta.querySelector('.cpat').style.backgroundSize='120px 120px';
+cta.querySelector('.cad').innerHTML=`<svg width="34" height="40" viewBox="0 0 34 40" style="vertical-align:-6px;margin-left:10px"><path d="M17 2C9 2 3 8 3 16c0 10 14 22 14 22s14-12 14-22C31 8 25 2 17 2z" fill="#e2b04a"/><circle cx="17" cy="16" r="5" fill="#071a47"/></svg>الدرارية، الجزائر العاصمة`;
+cta.querySelectorAll('.cph span').forEach(s=>s.outerHTML=`<svg width="44" height="44" viewBox="0 0 24 24" style="vertical-align:-6px;margin-right:14px"><path fill="#e2b04a" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>`);
+function renderCTA(t){const a=39.4;const vis=t>=a;cta.style.display=vis?'':'none';if(!vis)return;
+ cta.querySelector('.cbg').style.opacity=oC(pr(t,a,a+0.6));
+ const cp=cta.querySelector('.cpat');cp.style.clipPath=`inset(0 0 ${(1-ioC(pr(t,a,a+0.9)))*100}% 0)`;cp.style.backgroundPosition=`center ${(t-a)*20}px`;
+ const lp=pr(t,a+0.2,a+0.9);const lg=cta.querySelector('.clogo');lg.style.opacity=oC(lp);lg.style.transform=`scale(${0.92+0.08*oC(lp)})`;
+ lg.style.filter=`drop-shadow(0 6px 18px rgba(0,0,0,.5)) brightness(${1+0.4*Math.sin(pr(t,a+0.9,a+1.9)*Math.PI)})`;
+ const tt=cta.querySelector('.ct1 .t');tt.style.clipPath=`inset(0 0 0 ${(1-oC(pr(t,a+0.4,a+1.0)))*100}%)`;
+ [['.p1',a+0.9],['.p2',a+1.15],['.cad',a+1.45]].forEach(([s,b])=>{const e=cta.querySelector(s);const p=pr(t,b,b+0.45);e.style.opacity=oC(p);e.style.transform=`translateY(${(1-oC(p))*24}px)`})}
+
+// order: content below transition? keep text above transition so cards persist
+S.appendChild(trSvg);S.appendChild(sweep);[...KW.map(k=>k.e),cardHead,C1,C2,fl,giftHead,...GIFTS.map(g=>g.e),subs,cta,logoShine,logo].forEach(e=>S.appendChild(e));
+window.render=t=>{renderTr(t);renderSweep(t);renderKW(t);renderCards(t);renderFlight(t);renderGifts(t);renderSubs(t);renderCTA(t);renderLogo(t)};
+window.render(0);
+</script></body></html>
