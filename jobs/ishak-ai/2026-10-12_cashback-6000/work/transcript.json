@@ -1,0 +1,801 @@
+{
+  "language_code": "ara",
+  "segments": [
+    {
+      "text": "\u0633\u062a \u0622\u0644\u0627\u0641 \u062f\u0648\u0644\u0627\u0631 \u0643\u0627\u0645\u0644\u0629 \u064a\u0639\u0637\u0648\u0647\u0627 \u0644\u0643 \u062a\u064a\u0643 \u062a\u0648\u0643 \u0623\u062f\u0632. \u0648\u0641\u0631\u062a \u0644\u0643\u0645 \u062d\u0633\u0627\u0628\u0627\u062a \u062a\u064a\u0643 \u062a\u0648\u0643 \u0623\u062f\u0632 \u0623\u062c\u0646\u0633\u064a \u062a\u0639\u0645\u0644 \u0628\u0627\u0644\u0645\u062f\u064a\u0648\u0646\u064a\u0629 \u0648\u0641\u064a\u0647\u0627 \u0643\u0627\u0634 \u0628\u0627\u0643. \u064a\u0639\u0646\u064a \u062a\u0635\u0631\u0641 \u0645\u064a\u062a\u064a\u0646 \u062f\u0648\u0644\u0627\u0631 \u064a\u0639\u0637\u0648\u0643 \u0645\u064a\u062a\u064a\u0646 \u062f\u0648\u0644\u0627\u0631\u060c \u062a\u0635\u0631\u0641 \u0623\u0644\u0641 \u062f\u0648\u0644\u0627\u0631 \u064a\u0639\u0637\u0648\u0643 \u0623\u0644\u0641 \u062f\u0648\u0644\u0627\u0631\u060c \u062a\u0635\u0631\u0641 \u062d\u062a\u0649 \u0633\u062a \u0622\u0644\u0627\u0641 \u062f\u0648\u0644\u0627\u0631\u060c \u064a\u0631\u062c\u0639\u0648\u0627 \u0644\u0643 \u0633\u062a \u0622\u0644\u0627\u0641 \u062f\u0648\u0644\u0627\u0631. \u0645\u0627 \u0648\u0644\u0627 \u0645\u0627 \u0639\u0646\u062f\u0643\u0634 \u0643\u0627\u0631\u062f \u0641\u064a\u0632\u0627\u060c \u0631\u0627\u062d \u0646\u0639\u0627\u0648\u0646\u0643 \u0628\u0627\u0634 \u062a\u0641\u062a\u062d\u0647\u0627 \u0641\u064a \u0623\u0642\u0644 \u0645\u0646 \u0623\u0631\u0628\u0639\u0629 \u0648\u0639\u0634\u0631\u064a\u0646 \u0633\u0627\u0639\u0629. \u0646\u0632\u064a\u062f \u0644\u0643 \u0645\u062a\u0627\u0628\u0639\u0629 \u0645\u062c\u0627\u0646\u064a\u0629 \u0648\u0627\u0644\u0636\u0645\u0627\u0646 \u0627\u0644\u0630\u0647\u0628\u064a \u0644\u0645\u062f\u0629 \u0633\u0646\u0629 \u0643\u0627\u0645\u0644\u0629. \u0645\u0627 \u0639\u0646\u062f\u0643 \u0648\u064a\u0646 \u062a\u0647\u0631\u0628. \u0643\u0648\u0646\u062a\u0627\u0643\u062a\u064a\u0646\u064a \u0628\u0627\u0634 \u062a\u0628\u062f\u0627 \u062a\u062e\u062f\u0645 \u0639\u0644\u0649 \u0631\u0648\u062d\u062a\u0643.",
+      "start_time": 0.16,
+      "end_time": 27.12,
+      "speaker": {
+        "id": "speaker_0",
+        "name": "Speaker 0"
+      },
+      "words": [
+        {
+          "text": "\u0633\u062a",
+          "start_time": 0.16,
+          "end_time": 0.38
+        },
+        {
+          "text": " ",
+          "start_time": 0.38,
+          "end_time": 0.46
+        },
+        {
+          "text": "\u0622\u0644\u0627\u0641",
+          "start_time": 0.5,
+          "end_time": 0.76
+        },
+        {
+          "text": " ",
+          "start_time": 0.76,
+          "end_time": 0.78
+        },
+        {
+          "text": "\u062f\u0648\u0644\u0627\u0631",
+          "start_time": 0.78,
+          "end_time": 1.06
+        },
+        {
+          "text": " ",
+          "start_time": 1.06,
+          "end_time": 1.16
+        },
+        {
+          "text": "\u0643\u0627\u0645\u0644\u0629",
+          "start_time": 1.18,
+          "end_time": 1.74
+        },
+        {
+          "text": " ",
+          "start_time": 1.74,
+          "end_time": 1.78
+        },
+        {
+          "text": "\u064a\u0639\u0637\u0648\u0647\u0627",
+          "start_time": 1.78,
+          "end_time": 2.18
+        },
+        {
+          "text": " ",
+          "start_time": 2.18,
+          "end_time": 2.22
+        },
+        {
+          "text": "\u0644\u0643",
+          "start_time": 2.22,
+          "end_time": 2.38
+        },
+        {
+          "text": " ",
+          "start_time": 2.38,
+          "end_time": 2.4
+        },
+        {
+          "text": "\u062a\u064a\u0643",
+          "start_time": 2.4,
+          "end_time": 2.58
+        },
+        {
+          "text": " ",
+          "start_time": 2.58,
+          "end_time": 2.62
+        },
+        {
+          "text": "\u062a\u0648\u0643",
+          "start_time": 2.62,
+          "end_time": 2.82
+        },
+        {
+          "text": " ",
+          "start_time": 2.82,
+          "end_time": 2.84
+        },
+        {
+          "text": "\u0623\u062f\u0632.",
+          "start_time": 2.84,
+          "end_time": 3.12
+        },
+        {
+          "text": " ",
+          "start_time": 3.12,
+          "end_time": 3.34
+        },
+        {
+          "text": "\u0648\u0641\u0631\u062a",
+          "start_time": 3.34,
+          "end_time": 3.76
+        },
+        {
+          "text": " ",
+          "start_time": 3.76,
+          "end_time": 3.8
+        },
+        {
+          "text": "\u0644\u0643\u0645",
+          "start_time": 3.8,
+          "end_time": 4.04
+        },
+        {
+          "text": " ",
+          "start_time": 4.04,
+          "end_time": 4.08
+        },
+        {
+          "text": "\u062d\u0633\u0627\u0628\u0627\u062a",
+          "start_time": 4.08,
+          "end_time": 4.62
+        },
+        {
+          "text": " ",
+          "start_time": 4.62,
+          "end_time": 4.66
+        },
+        {
+          "text": "\u062a\u064a\u0643",
+          "start_time": 4.66,
+          "end_time": 4.84
+        },
+        {
+          "text": " ",
+          "start_time": 4.84,
+          "end_time": 4.88
+        },
+        {
+          "text": "\u062a\u0648\u0643",
+          "start_time": 4.88,
+          "end_time": 5.1
+        },
+        {
+          "text": " ",
+          "start_time": 5.1,
+          "end_time": 5.14
+        },
+        {
+          "text": "\u0623\u062f\u0632",
+          "start_time": 5.14,
+          "end_time": 5.42
+        },
+        {
+          "text": " ",
+          "start_time": 5.42,
+          "end_time": 5.44
+        },
+        {
+          "text": "\u0623\u062c\u0646\u0633\u064a",
+          "start_time": 5.44,
+          "end_time": 5.94
+        },
+        {
+          "text": " ",
+          "start_time": 5.94,
+          "end_time": 6.1
+        },
+        {
+          "text": "\u062a\u0639\u0645\u0644",
+          "start_time": 6.1,
+          "end_time": 6.4
+        },
+        {
+          "text": " ",
+          "start_time": 6.4,
+          "end_time": 6.44
+        },
+        {
+          "text": "\u0628\u0627\u0644\u0645\u062f\u064a\u0648\u0646\u064a\u0629",
+          "start_time": 6.44,
+          "end_time": 7.3
+        },
+        {
+          "text": " ",
+          "start_time": 7.3,
+          "end_time": 7.32
+        },
+        {
+          "text": "\u0648\u0641\u064a\u0647\u0627",
+          "start_time": 7.32,
+          "end_time": 7.7
+        },
+        {
+          "text": " ",
+          "start_time": 7.7,
+          "end_time": 7.74
+        },
+        {
+          "text": "\u0643\u0627\u0634",
+          "start_time": 7.74,
+          "end_time": 7.92
+        },
+        {
+          "text": " ",
+          "start_time": 7.92,
+          "end_time": 8.02
+        },
+        {
+          "text": "\u0628\u0627\u0643.",
+          "start_time": 8.02,
+          "end_time": 8.26
+        },
+        {
+          "text": " ",
+          "start_time": 8.26,
+          "end_time": 8.46
+        },
+        {
+          "text": "\u064a\u0639\u0646\u064a",
+          "start_time": 8.46,
+          "end_time": 8.7
+        },
+        {
+          "text": " ",
+          "start_time": 8.7,
+          "end_time": 8.74
+        },
+        {
+          "text": "\u062a\u0635\u0631\u0641",
+          "start_time": 8.74,
+          "end_time": 9.02
+        },
+        {
+          "text": " ",
+          "start_time": 9.02,
+          "end_time": 9.04
+        },
+        {
+          "text": "\u0645\u064a\u062a\u064a\u0646",
+          "start_time": 9.04,
+          "end_time": 9.28
+        },
+        {
+          "text": " ",
+          "start_time": 9.28,
+          "end_time": 9.32
+        },
+        {
+          "text": "\u062f\u0648\u0644\u0627\u0631",
+          "start_time": 9.32,
+          "end_time": 9.56
+        },
+        {
+          "text": " ",
+          "start_time": 9.56,
+          "end_time": 9.6
+        },
+        {
+          "text": "\u064a\u0639\u0637\u0648\u0643",
+          "start_time": 9.6,
+          "end_time": 9.82
+        },
+        {
+          "text": " ",
+          "start_time": 9.82,
+          "end_time": 9.86
+        },
+        {
+          "text": "\u0645\u064a\u062a\u064a\u0646",
+          "start_time": 9.86,
+          "end_time": 10.1
+        },
+        {
+          "text": " ",
+          "start_time": 10.1,
+          "end_time": 10.12
+        },
+        {
+          "text": "\u062f\u0648\u0644\u0627\u0631\u060c",
+          "start_time": 10.12,
+          "end_time": 10.36
+        },
+        {
+          "text": " ",
+          "start_time": 10.36,
+          "end_time": 10.44
+        },
+        {
+          "text": "\u062a\u0635\u0631\u0641",
+          "start_time": 10.44,
+          "end_time": 10.72
+        },
+        {
+          "text": " ",
+          "start_time": 10.72,
+          "end_time": 10.9
+        },
+        {
+          "text": "\u0623\u0644\u0641",
+          "start_time": 10.9,
+          "end_time": 11.12
+        },
+        {
+          "text": " ",
+          "start_time": 11.12,
+          "end_time": 11.14
+        },
+        {
+          "text": "\u062f\u0648\u0644\u0627\u0631",
+          "start_time": 11.14,
+          "end_time": 11.44
+        },
+        {
+          "text": " ",
+          "start_time": 11.44,
+          "end_time": 11.48
+        },
+        {
+          "text": "\u064a\u0639\u0637\u0648\u0643",
+          "start_time": 11.48,
+          "end_time": 11.78
+        },
+        {
+          "text": " ",
+          "start_time": 11.78,
+          "end_time": 11.8
+        },
+        {
+          "text": "\u0623\u0644\u0641",
+          "start_time": 11.8,
+          "end_time": 11.96
+        },
+        {
+          "text": " ",
+          "start_time": 11.96,
+          "end_time": 12.02
+        },
+        {
+          "text": "\u062f\u0648\u0644\u0627\u0631\u060c",
+          "start_time": 12.02,
+          "end_time": 12.28
+        },
+        {
+          "text": " ",
+          "start_time": 12.28,
+          "end_time": 12.42
+        },
+        {
+          "text": "\u062a\u0635\u0631\u0641",
+          "start_time": 12.42,
+          "end_time": 12.74
+        },
+        {
+          "text": " ",
+          "start_time": 12.74,
+          "end_time": 12.78
+        },
+        {
+          "text": "\u062d\u062a\u0649",
+          "start_time": 12.78,
+          "end_time": 13.06
+        },
+        {
+          "text": " ",
+          "start_time": 13.06,
+          "end_time": 13.14
+        },
+        {
+          "text": "\u0633\u062a",
+          "start_time": 13.14,
+          "end_time": 13.26
+        },
+        {
+          "text": " ",
+          "start_time": 13.26,
+          "end_time": 13.32
+        },
+        {
+          "text": "\u0622\u0644\u0627\u0641",
+          "start_time": 13.32,
+          "end_time": 13.5
+        },
+        {
+          "text": " ",
+          "start_time": 13.5,
+          "end_time": 13.54
+        },
+        {
+          "text": "\u062f\u0648\u0644\u0627\u0631\u060c",
+          "start_time": 13.54,
+          "end_time": 13.82
+        },
+        {
+          "text": " ",
+          "start_time": 13.82,
+          "end_time": 13.98
+        },
+        {
+          "text": "\u064a\u0631\u062c\u0639\u0648\u0627",
+          "start_time": 13.98,
+          "end_time": 14.24
+        },
+        {
+          "text": " ",
+          "start_time": 14.24,
+          "end_time": 14.28
+        },
+        {
+          "text": "\u0644\u0643",
+          "start_time": 14.28,
+          "end_time": 14.42
+        },
+        {
+          "text": " ",
+          "start_time": 14.42,
+          "end_time": 14.48
+        },
+        {
+          "text": "\u0633\u062a",
+          "start_time": 14.48,
+          "end_time": 14.64
+        },
+        {
+          "text": " ",
+          "start_time": 14.64,
+          "end_time": 14.74
+        },
+        {
+          "text": "\u0622\u0644\u0627\u0641",
+          "start_time": 14.74,
+          "end_time": 14.96
+        },
+        {
+          "text": " ",
+          "start_time": 14.96,
+          "end_time": 15.02
+        },
+        {
+          "text": "\u062f\u0648\u0644\u0627\u0631.",
+          "start_time": 15.02,
+          "end_time": 15.24
+        },
+        {
+          "text": " ",
+          "start_time": 15.24,
+          "end_time": 15.36
+        },
+        {
+          "text": "\u0645\u0627",
+          "start_time": 15.36,
+          "end_time": 15.46
+        },
+        {
+          "text": " ",
+          "start_time": 15.46,
+          "end_time": 15.5
+        },
+        {
+          "text": "\u0648\u0644\u0627",
+          "start_time": 15.5,
+          "end_time": 15.66
+        },
+        {
+          "text": " ",
+          "start_time": 15.66,
+          "end_time": 15.7
+        },
+        {
+          "text": "\u0645\u0627",
+          "start_time": 15.7,
+          "end_time": 15.74
+        },
+        {
+          "text": " ",
+          "start_time": 15.74,
+          "end_time": 15.78
+        },
+        {
+          "text": "\u0639\u0646\u062f\u0643\u0634",
+          "start_time": 15.78,
+          "end_time": 16.079
+        },
+        {
+          "text": " ",
+          "start_time": 16.079,
+          "end_time": 16.12
+        },
+        {
+          "text": "\u0643\u0627\u0631\u062f",
+          "start_time": 16.12,
+          "end_time": 16.32
+        },
+        {
+          "text": " ",
+          "start_time": 16.32,
+          "end_time": 16.36
+        },
+        {
+          "text": "\u0641\u064a\u0632\u0627\u060c",
+          "start_time": 16.36,
+          "end_time": 16.66
+        },
+        {
+          "text": " ",
+          "start_time": 16.66,
+          "end_time": 16.82
+        },
+        {
+          "text": "\u0631\u0627\u062d",
+          "start_time": 16.82,
+          "end_time": 16.96
+        },
+        {
+          "text": " ",
+          "start_time": 16.96,
+          "end_time": 17.0
+        },
+        {
+          "text": "\u0646\u0639\u0627\u0648\u0646\u0643",
+          "start_time": 17.0,
+          "end_time": 17.46
+        },
+        {
+          "text": " ",
+          "start_time": 17.46,
+          "end_time": 17.5
+        },
+        {
+          "text": "\u0628\u0627\u0634",
+          "start_time": 17.5,
+          "end_time": 17.62
+        },
+        {
+          "text": " ",
+          "start_time": 17.62,
+          "end_time": 17.64
+        },
+        {
+          "text": "\u062a\u0641\u062a\u062d\u0647\u0627",
+          "start_time": 17.64,
+          "end_time": 18.08
+        },
+        {
+          "text": " ",
+          "start_time": 18.08,
+          "end_time": 18.12
+        },
+        {
+          "text": "\u0641\u064a",
+          "start_time": 18.12,
+          "end_time": 18.22
+        },
+        {
+          "text": " ",
+          "start_time": 18.22,
+          "end_time": 18.24
+        },
+        {
+          "text": "\u0623\u0642\u0644",
+          "start_time": 18.24,
+          "end_time": 18.52
+        },
+        {
+          "text": " ",
+          "start_time": 18.52,
+          "end_time": 18.56
+        },
+        {
+          "text": "\u0645\u0646",
+          "start_time": 18.56,
+          "end_time": 18.62
+        },
+        {
+          "text": " ",
+          "start_time": 18.62,
+          "end_time": 18.62
+        },
+        {
+          "text": "\u0623\u0631\u0628\u0639\u0629",
+          "start_time": 18.62,
+          "end_time": 18.86
+        },
+        {
+          "text": " ",
+          "start_time": 18.86,
+          "end_time": 18.9
+        },
+        {
+          "text": "\u0648\u0639\u0634\u0631\u064a\u0646",
+          "start_time": 18.9,
+          "end_time": 19.24
+        },
+        {
+          "text": " ",
+          "start_time": 19.24,
+          "end_time": 19.34
+        },
+        {
+          "text": "\u0633\u0627\u0639\u0629.",
+          "start_time": 19.34,
+          "end_time": 19.62
+        },
+        {
+          "text": " ",
+          "start_time": 19.62,
+          "end_time": 19.8
+        },
+        {
+          "text": "\u0646\u0632\u064a\u062f",
+          "start_time": 19.8,
+          "end_time": 20.04
+        },
+        {
+          "text": " ",
+          "start_time": 20.04,
+          "end_time": 20.06
+        },
+        {
+          "text": "\u0644\u0643",
+          "start_time": 20.06,
+          "end_time": 20.2
+        },
+        {
+          "text": " ",
+          "start_time": 20.2,
+          "end_time": 20.24
+        },
+        {
+          "text": "\u0645\u062a\u0627\u0628\u0639\u0629",
+          "start_time": 20.24,
+          "end_time": 20.8
+        },
+        {
+          "text": " ",
+          "start_time": 20.8,
+          "end_time": 20.86
+        },
+        {
+          "text": "\u0645\u062c\u0627\u0646\u064a\u0629",
+          "start_time": 20.86,
+          "end_time": 21.44
+        },
+        {
+          "text": " ",
+          "start_time": 21.44,
+          "end_time": 21.46
+        },
+        {
+          "text": "\u0648\u0627\u0644\u0636\u0645\u0627\u0646",
+          "start_time": 21.46,
+          "end_time": 22.04
+        },
+        {
+          "text": " ",
+          "start_time": 22.04,
+          "end_time": 22.1
+        },
+        {
+          "text": "\u0627\u0644\u0630\u0647\u0628\u064a",
+          "start_time": 22.1,
+          "end_time": 22.52
+        },
+        {
+          "text": " ",
+          "start_time": 22.52,
+          "end_time": 22.56
+        },
+        {
+          "text": "\u0644\u0645\u062f\u0629",
+          "start_time": 22.56,
+          "end_time": 23.1
+        },
+        {
+          "text": " ",
+          "start_time": 23.1,
+          "end_time": 23.18
+        },
+        {
+          "text": "\u0633\u0646\u0629",
+          "start_time": 23.18,
+          "end_time": 23.44
+        },
+        {
+          "text": " ",
+          "start_time": 23.44,
+          "end_time": 23.6
+        },
+        {
+          "text": "\u0643\u0627\u0645\u0644\u0629.",
+          "start_time": 23.6,
+          "end_time": 24.02
+        },
+        {
+          "text": " ",
+          "start_time": 24.02,
+          "end_time": 24.14
+        },
+        {
+          "text": "\u0645\u0627",
+          "start_time": 24.14,
+          "end_time": 24.26
+        },
+        {
+          "text": " ",
+          "start_time": 24.26,
+          "end_time": 24.28
+        },
+        {
+          "text": "\u0639\u0646\u062f\u0643",
+          "start_time": 24.28,
+          "end_time": 24.62
+        },
+        {
+          "text": " ",
+          "start_time": 24.62,
+          "end_time": 24.66
+        },
+        {
+          "text": "\u0648\u064a\u0646",
+          "start_time": 24.68,
+          "end_time": 24.8
+        },
+        {
+          "text": " ",
+          "start_time": 24.8,
+          "end_time": 24.84
+        },
+        {
+          "text": "\u062a\u0647\u0631\u0628.",
+          "start_time": 24.84,
+          "end_time": 25.18
+        },
+        {
+          "text": " ",
+          "start_time": 25.18,
+          "end_time": 25.26
+        },
+        {
+          "text": "\u0643\u0648\u0646\u062a\u0627\u0643\u062a\u064a\u0646\u064a",
+          "start_time": 25.26,
+          "end_time": 25.88
+        },
+        {
+          "text": " ",
+          "start_time": 25.88,
+          "end_time": 25.92
+        },
+        {
+          "text": "\u0628\u0627\u0634",
+          "start_time": 25.92,
+          "end_time": 26.04
+        },
+        {
+          "text": " ",
+          "start_time": 26.04,
+          "end_time": 26.06
+        },
+        {
+          "text": "\u062a\u0628\u062f\u0627",
+          "start_time": 26.06,
+          "end_time": 26.26
+        },
+        {
+          "text": " ",
+          "start_time": 26.26,
+          "end_time": 26.3
+        },
+        {
+          "text": "\u062a\u062e\u062f\u0645",
+          "start_time": 26.3,
+          "end_time": 26.52
+        },
+        {
+          "text": " ",
+          "start_time": 26.52,
+          "end_time": 26.58
+        },
+        {
+          "text": "\u0639\u0644\u0649",
+          "start_time": 26.58,
+          "end_time": 26.74
+        },
+        {
+          "text": " ",
+          "start_time": 26.74,
+          "end_time": 26.76
+        },
+        {
+          "text": "\u0631\u0648\u062d\u062a\u0643.",
+          "start_time": 26.76,
+          "end_time": 27.12
+        }
+      ]
+    }
+  ]
+}

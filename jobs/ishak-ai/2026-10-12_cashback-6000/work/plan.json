@@ -1,0 +1,17 @@
+{
+  "job": "ishak-ai / cashback-6000 (v1, code-only motion)",
+  "source": "talking-head 608x1080 30fps, 27.114s, already cut (no cuts applied)",
+  "canvas": "1080x1920 @30fps, 867 frames = 813 video + 54 end-card hold (1.8s)",
+  "choices": {"layout": "hybrid", "captions": "word-by-word, Cairo 900, lime keyword", "energy": "punchy premium",
+              "footage": "green grade + vignette only (no segmentation, background kept)", "audio": "voice + synthesized SFX"},
+  "cues": [
+    {"t": [0.00, 3.28],  "scene": "S1 hook",    "fx": "$0 -> $6,000 lime counter (lands 1.06 'دولار'), underline 1.18 'كاملة', TIKTOK ADS · CASHBACK tag 2.40"},
+    {"t": [3.34, 8.34],  "scene": "S2 account", "fx": "glass card 4.08 'حسابات', verified 4.40, chips Agency 5.44 / بالمديونية 6.44 / Cashback 7.74"},
+    {"t": [8.34, 15.52], "scene": "S3 full motion", "fx": "circle wipe in; spend vs back panels: 200 (8.74/9.60), 1000 (10.44/11.48), 6000 (12.42/13.98); 100% CASHBACK stamp 14.88; collapse into PiP"},
+    {"t": [16.08, 19.72],"scene": "S4 card",    "fx": "3D card flip 16.12 'كارد فيزا'; slides right 18.0; 24h ring 18.24 'أقل من 24 ساعة'"},
+    {"t": [20.20, 24.08],"scene": "S5 support/guarantee", "fx": "pill 'متابعة حتى أول حملة · مجاناً' 20.24; shield 21.46 'الضمان'; months 0->12 at 23.18 'سنة'"},
+    {"t": [24.10, 25.30],"scene": "S6 punch",   "fx": "zoom 1.36 + shake, 'ما عندك / وين تهرب' kinetic"},
+    {"t": [25.20, 28.90],"scene": "S7 CTA",     "fx": "darken+blur footage, header travels y+230 scale 1.7 over mint bloom, 'كونتاكتيني', 'ابعثلنا فالخاص', IG @ishak_laieb"}
+  ],
+  "brand_carrier": "header lockup from frame 0 (scale .8, top 96) -> end-card logo at CTA; no hero reveal because the brand name is never spoken"
+}
