@@ -144,17 +144,26 @@ body{font-family:'Cairo',sans-serif;color:var(--white);-webkit-font-smoothing:an
 #cta1 .big{font-weight:900;font-size:118px;line-height:1.15;display:block}
 #cta1 .sm{font-weight:800;font-size:58px;color:var(--silver);display:block;margin-top:6px}
 #cta1 .sm span{display:inline-block;margin:0 8px}
-#cta2{left:0;right:0;top:1060px;text-align:center;direction:rtl}
+#cta2{left:0;right:0;top:1060px;text-align:center;direction:rtl;height:400px}
 #cta2 .say{font-weight:900;font-size:92px;line-height:1.2}
 #igbtn{display:inline-flex;align-items:center;gap:26px;padding:24px 46px 24px 30px;margin-top:30px;direction:ltr;border-radius:999px}
 #igbtn .h{font-family:'Montserrat';font-weight:800;font-size:62px;color:#fff}
 .ig{width:96px;height:96px;border-radius:28px;display:grid;place-items:center;
   background:radial-gradient(circle at 30% 107%,#fdf497 0%,#fdf497 5%,#fd5949 45%,#d6249f 60%,#285AEB 90%)}
 
+/* v2 3D assets */
+.a3{position:absolute;display:block;filter:drop-shadow(0 18px 30px rgba(0,0,0,.55)) drop-shadow(0 0 22px rgba(46,245,154,.35));will-change:transform}
+.ico img{width:118px;height:118px;object-fit:contain}
+#pill .ico img{width:96px;height:96px}
+#s3 .plate{position:absolute;inset:0;width:1080px;height:1920px;object-fit:cover;opacity:.3;filter:brightness(.7) contrast(1.1)}
+#burst{left:-140px;top:780px;width:1360px}
+#stopimg{position:absolute;left:0;top:14px;width:250px}
+#timer .val2{position:absolute;left:0;width:250px;top:136px;height:190px;display:grid;place-items:center;font-family:'Montserrat';font-weight:900;font-size:62px;color:#fff;direction:ltr}
+#timer .val2 small{font-size:38px;color:var(--lime)}
+#visaimg{position:absolute;left:230px;top:30px;width:620px}
 /* fx */
 #flash{background:radial-gradient(circle at 50% 45%,rgba(198,255,61,.9),rgba(46,245,154,.5) 40%,rgba(46,245,154,0) 75%);mix-blend-mode:screen;opacity:0}
-#leak{left:-600px;top:-200px;width:520px;height:2400px;background:linear-gradient(90deg,rgba(46,245,154,0),rgba(46,245,154,.55),rgba(198,255,61,.35),rgba(46,245,154,0));
-  transform:rotate(18deg);mix-blend-mode:screen;opacity:0;filter:blur(30px)}
+#leak{left:0;top:0;width:1080px;height:1920px;object-fit:cover;mix-blend-mode:screen;opacity:0}
 .hide{visibility:hidden}
 </style>
 </head>
@@ -179,7 +188,7 @@ body{font-family:'Cairo',sans-serif;color:var(--white);-webkit-font-smoothing:an
 
   <!-- S2 account card -->
   <div class="abs glass" id="acct">
-    <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#C6FF3D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="14" rx="3"/><path d="M8 6V4.5A1.5 1.5 0 0 1 9.5 3h5A1.5 1.5 0 0 1 16 4.5V6"/><path d="M3 12h18"/><path d="M11 12v2h2v-2"/></svg></div>
+    <div class="ico"><img src="assets/k/briefcase.png"></div>
     <div>
       <div class="t1"><span>حساب</span><span class="en">TikTok Ads</span><span class="ver" id="ver"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#030504" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></div>
       <div class="chips">
@@ -191,41 +200,36 @@ body{font-family:'Cairo',sans-serif;color:var(--white);-webkit-font-smoothing:an
   </div>
 
   <!-- S4 visa + timer -->
-  <div class="abs" id="c3d"><div id="vcard">
-    <div class="sheen"></div><div class="brand">VISA</div><div class="chipx"></div>
-    <svg class="nfc" width="44" height="58" viewBox="0 0 24 32" fill="none" stroke="#e9efec" stroke-width="2.2" stroke-linecap="round"><path d="M4 10c3 3.5 3 8.5 0 12"/><path d="M9 7c4.5 5 4.5 13 0 18"/><path d="M14 4c6 7 6 17 0 24"/></svg>
-    <div class="nums">•••• •••• •••• 2026</div><div class="nm">YOUR NAME</div><div class="mk">24H</div>
-  </div></div>
+  <div class="abs" id="c3d"><div id="vcard" style="all:unset;position:absolute;left:0;top:0;width:1080px;height:470px;transform-style:preserve-3d"><img id="visaimg" src="assets/k/visa.png"></div></div>
   <div class="abs" id="timer">
     <div class="lab">أقل من</div>
-    <div class="ring">
-      <svg viewBox="0 0 250 250"><circle cx="125" cy="125" r="108" fill="rgba(3,12,8,.7)" stroke="rgba(185,194,189,.18)" stroke-width="16"/>
-      <circle id="arc" cx="125" cy="125" r="108" fill="none" stroke="#C6FF3D" stroke-width="16" stroke-linecap="round" transform="rotate(-90 125 125)" stroke-dasharray="678.6" stroke-dashoffset="678.6" style="filter:drop-shadow(0 0 12px rgba(198,255,61,.7))"/></svg>
-      <div class="val"><span id="tval">0<small>h</small></span></div>
-    </div>
+    <div class="ring"><img id="stopimg" src="assets/k/stopwatch.png"><div class="val2"><span id="tval">0<small>h</small></span></div></div>
   </div>
 
   <!-- S5 -->
   <div class="abs" id="pill"><div class="glass mintrim">
-    <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#C6FF3D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14v-2a8 8 0 0 1 16 0v2"/><rect x="3" y="13.5" width="4" height="6.5" rx="1.6"/><rect x="17" y="13.5" width="4" height="6.5" rx="1.6"/><path d="M19 20c0 1.2-2 2-5 2"/></svg></div>
+    <div class="ico"><img src="assets/k/headset.png"></div>
     <div><div class="tx">متابعة حتى أول حملة</div><span class="tg">مجاناً</span></div>
   </div></div>
   <div class="abs glass" id="shield">
-    <svg width="210" height="240" viewBox="0 0 210 240"><defs><linearGradient id="sg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2EF59A" stop-opacity=".55"/><stop offset="1" stop-color="#062a18" stop-opacity=".9"/></linearGradient></defs>
-      <path d="M105 10 L190 42 V118 C190 172 152 210 105 230 C58 210 20 172 20 118 V42 Z" fill="url(#sg)" stroke="#2EF59A" stroke-width="6" style="filter:drop-shadow(0 0 18px rgba(46,245,154,.7))"/>
-      <path id="chk" d="M65 122 L95 152 L148 96" fill="none" stroke="#C6FF3D" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="130" stroke-dashoffset="130" style="filter:drop-shadow(0 0 10px rgba(198,255,61,.8))"/></svg>
+    <img src="assets/k/shield.png" style="width:230px;flex:none;filter:drop-shadow(0 0 24px rgba(46,245,154,.45))">
     <div><div class="t1 lime">الضمان الذهبي</div><div class="t2"><span class="n en" id="mon">0</span><span class="u">شهر · سنة كاملة</span></div></div>
   </div>
 
   <!-- S6 -->
   <div class="abs" id="s6"><span class="l1"><span id="s6a">ما</span> <span id="s6b">عندك</span></span><span class="l2 lime"><span id="s6c">وين</span> <span id="s6d">تهرب</span></span></div>
 
+  <img class="a3" id="aCoin" src="assets/k/coin.png" style="left:770px;top:860px;width:230px">
+  <img class="a3" id="aTik" src="assets/k/tiktok.png" style="left:70px;top:870px;width:190px">
+  <img class="a3" id="aPhone" src="assets/k/phone.png" style="left:610px;top:1010px;width:400px">
+  <img class="a3" id="aLoop" src="assets/k/loop.png" style="left:60px;top:930px;width:200px">
+  <img class="a3" id="aCal" src="assets/k/calendar.png" style="left:780px;top:960px;width:200px">
   <!-- captions -->
   <div id="caps"></div>
 
   <!-- S3 full motion scene -->
   <div class="layer" id="s3">
-    <div class="abs bl1"></div><div class="abs bl2"></div>
+    <img class="plate" src="assets/k/bgplate.jpg"><div class="abs bl1"></div><div class="abs bl2"></div>
     <div class="abs" id="grid"></div>
     <div class="abs" id="pip"><img id="pipimg" src="vf/0001.jpg"></div>
     <div class="abs" id="s3title">قداش ما تصرف… يرجعلك <span class="lime">نفس المبلغ</span></div>
@@ -234,7 +238,7 @@ body{font-family:'Cairo',sans-serif;color:var(--white);-webkit-font-smoothing:an
     <div class="abs glass" id="eq">=</div>
     <div class="abs" id="steps"><span class="st" id="st0">$200</span><span class="st" id="st1">$1,000</span><span class="st" id="st2">$6,000</span></div>
     <div class="abs" id="fine">* حسب شروط العرض</div>
-    <div class="abs" id="stamp"><div style="text-align:center"><div class="a">100%</div><div class="b">CASHBACK</div></div></div>
+    <img class="a3" id="burst" src="assets/k/burst.png"><div class="abs" id="stamp"><div style="text-align:center"><div class="a">100%</div><div class="b">CASHBACK</div></div></div>
   </div>
 
   <!-- S7 CTA -->
@@ -242,13 +246,13 @@ body{font-family:'Cairo',sans-serif;color:var(--white);-webkit-font-smoothing:an
   <div class="abs" id="bloom"></div>
   <div class="abs" id="cta1"><span class="big" id="ctaBig">كونتاكتيني</span><span class="sm"><span id="cw0">باش</span><span id="cw1">تبدا</span><span id="cw2">تخدم</span><span id="cw3">على</span><span id="cw4">روحتك</span></span></div>
   <div class="abs" id="cta2"><div class="say lime" id="say">ابعثلنا فالخاص</div>
-    <div class="glass" id="igbtn"><div class="ig"><svg width="58" height="58" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.1" fill="#fff" stroke="none"/></svg></div><span class="h">@ishak_laieb</span></div>
+    <img class="a3" id="aPlane" src="assets/k/plane.png" style="position:absolute;left:0;top:0;width:300px;z-index:3"><div class="glass" id="igbtn"><div class="ig"><svg width="58" height="58" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.1" fill="#fff" stroke="none"/></svg></div><span class="h">@ishak_laieb</span></div>
   </div>
 
   <!-- header lockup (brand carrier) -->
   <div id="hdr"><img src="assets/logo.png"><div class="wm"><span>ISHAK</span><span class="ai">AI</span></div></div>
 
-  <div class="abs" id="leak"></div>
+  <img class="abs" id="leak" src="assets/k/streaks.jpg">
   <div class="layer" id="flash"></div>
 </div>
 
@@ -431,15 +435,12 @@ async function render(t){
     if(t<a||t>b){set(wrap,0)}else{
       const i=p(t,a,a+.55), o=1-p(t,b-.22,b);
       const mv=eio(p(t,18.0,18.4));
-      const ry=lerp(105,0,eback(i))+(-12+Math.sin(t*1.6)*7)*eo(i);
+      const ry=lerp(105,0,eback(i))+(Math.sin(t*1.6)*6)*eo(i);
       const rx=8+Math.sin(t*1.2+1)*4;
       set(wrap,cl(i*4)*o,`translateX(${mv*170}px) translateY(${(1-eo(i))*140 - mv*20}px) scale(${(1-.28*mv)*(1+.08*(1-o))})`,(1-o)*12);
       card.style.transform=`rotateY(${ry}deg) rotateX(${rx}deg)`;
-      card.querySelector('.sheen').style.left=(lerp(-300,900,((t-a)*0.55)%1.4/1.4))+'px';
     }
     const ti=popEl($('timer'),t,18.12,19.72,{dy:80});
-    const arc=eio(p(t,18.24,19.3));
-    $('arc').setAttribute('stroke-dashoffset',(678.6*(1-arc)).toFixed(1));
     $('tval').innerHTML=Math.round(24*eo(p(t,18.62,19.34)))+'<small>h</small>';
   }
 
@@ -447,7 +448,6 @@ async function render(t){
   popEl($('pill'),t,20.2,21.4,{dy:110});
   {
     popEl($('shield'),t,21.42,24.08,{dy:120});
-    $('chk').setAttribute('stroke-dashoffset',(130*(1-eo(p(t,21.7,22.1)))).toFixed(1));
     $('mon').textContent=Math.round(12*eo(p(t,23.1,23.65)));
     $('mon').style.color=t>23.6?'var(--lime)':'#fff';
     $('mon').style.textShadow=t>23.6?'var(--limeGlow)':'none';
@@ -499,11 +499,38 @@ async function render(t){
     const fl=Math.max(.55*bump(t,1.06,10),.45*bump(t,8.38,8),.5*bump(t,14.9,8),.4*bump(t,24.84,10),.35*bump(t,25.3,6),.25*bump(t,0,10));
     $('flash').style.opacity=fl.toFixed(3);
     const leaks=[3.28,15.3,19.74,21.38];
-    let lo=0,lx=-700;
-    for(const a of leaks){const q=p(t,a-.1,a+.4);if(q>0&&q<1){lo=Math.sin(q*Math.PI);lx=lerp(-700,1300,eio(q))}}
-    $('leak').style.opacity=lo.toFixed(3);$('leak').style.left=lx+'px';
+    let lo=0,lx=0;
+    for(const a of leaks){const q=p(t,a-.1,a+.4);if(q>0&&q<1){lo=Math.sin(q*Math.PI)*.85;lx=lerp(-500,500,eio(q))}}
+    $('leak').style.opacity=lo.toFixed(3);$('leak').style.transform=`translateX(${lx}px) scale(1.3)`;
   }
+  render3D(t);
   renderCaps(t);
+}
+function float3(el,t,a,b,{dy=90,rot=0,spin=0,amp=10,di=.4,dout=.25,s0=.5}={}){
+  if(t<a||t>b){set(el,0);return}
+  const i=p(t,a,a+di), o=1-p(t,b-dout,b);
+  const fl=Math.sin((t-a)*2.2)*amp;
+  const ry=spin?lerp(spin,0,eo5(i)):0;
+  set(el,eo(i)*o,`translateY(${(1-eo(i))*dy+fl-(1-o)*40}px) rotate(${rot+Math.sin((t-a)*1.7)*3}deg) rotateY(${ry}deg) scale(${(s0+(1-s0)*eback(i))*(1-.15*(1-o))})`,(1-eo(i))*10+(1-o)*10);
+}
+function render3D(t){
+  // hook: coin spins in on the "$6,000" landing, tiktok on "تيك توك أدز"
+  float3($('aCoin'),t,.82,3.22,{spin:540,rot:8,di:.35});
+  float3($('aTik'),t,2.36,3.22,{rot:-8,di:.3});
+  // S2: phone dashboard on "وفرت لكم", cashback loop on "كاش باك"
+  float3($('aPhone'),t,3.34,4.3,{dy:140,rot:-6,amp:6,dout:.3});
+  float3($('aLoop'),t,7.7,8.34,{rot:0,di:.3,dout:.15});
+  if(t>=7.7&&t<=8.34){$('aLoop').style.transform+=` rotate(${(t-7.7)*260}deg)`}
+  // S3 finale burst behind stamp
+  { const e=$('burst'); if(t<14.86||t>15.5){set(e,0)}else{const q=p(t,14.86,15.5);
+      set(e,Math.sin(Math.min(q*1.6,1)*Math.PI*.5)*(1-p(t,15.25,15.5)),`scale(${lerp(.4,1.25,eo(q))})`,0);} }
+  // S4 visa: subtle sheen via brightness wobble handled by 3D wrapper
+  // S5 calendar on "سنة كاملة"
+  float3($('aCal'),t,23.14,24.08,{rot:6,di:.3,dout:.2});
+  // CTA paper plane flies into the IG button
+  { const e=$('aPlane'); if(t<26.45){set(e,0)}else{const q=eo5(p(t,26.45,27.05));
+      const x=lerp(-420,40,q), y=lerp(260,90,q);
+      set(e,cl(p(t,26.45,26.6)*1.0),`translate(${x}px,${y}px) rotate(${lerp(-18,0,q)}deg) scale(${lerp(1.2,.62,q)})`,(1-q)*4);} }
 }
 window.render=render;
 window.ready=document.fonts.ready.then(()=>render(0));
